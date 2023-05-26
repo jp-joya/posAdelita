@@ -13,9 +13,9 @@ public class ControladorProducto implements ActionListener{
 	private UIProducto vista;
 	private ProductoDAO modelo;
 							
-	public ControladorProducto(UIProducto vista, ProductoDAO modelo) {
+	public ControladorProducto(UIProducto vista) {
 		this.vista =vista;
-		this.modelo= modelo;
+		this.modelo = new ProductoDAO();
 		this.vista.guardar.addActionListener(this);
 		this.vista.salir.addActionListener(this);
 		this.vista.setVisible(true);

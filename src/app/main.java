@@ -1,4 +1,4 @@
-package uiTienda;
+package app;
 
 import controlador.*;
 import modelo.dto.*;

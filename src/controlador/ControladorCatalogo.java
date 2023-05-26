@@ -12,9 +12,9 @@ public class ControladorCatalogo implements ActionListener{
 	private UICatalogo vista;
 	private ProductoDAO modelo;
 	
-	public ControladorCatalogo(UICatalogo vista, ProductoDAO modelo) {
+	public ControladorCatalogo(UICatalogo vista) {
 		this.vista =vista;
-		this.modelo= modelo;
+		this.modelo = new ProductoDAO();
 		this.vista.actualizar.addActionListener(this);
 		this.vista.setVisible(true);
 	}

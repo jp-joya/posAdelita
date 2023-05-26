@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import modelo.dto.Producto;
 
 public class ProductoDAO{
+	
 	private ArrayList<Producto> catalogo;
 	public ObjectInputStream entrada;
     public ObjectOutputStream salida;
