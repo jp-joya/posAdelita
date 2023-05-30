@@ -24,6 +24,8 @@ public class UIPrincipal extends JFrame {
 	public JMenuItem crearProducto;
 	public JMenuItem verCatalogo;
 	public JButton salir;
+	public JButton nuevoPedido;
+	public JMenuItem historial;
 
 	/**
 	 * Launch the application.
@@ -57,8 +59,8 @@ public class UIPrincipal extends JFrame {
 		JMenu mnNewMenu = new JMenu("Pedidos");
 		menuBar.add(mnNewMenu);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Historial");
-		mnNewMenu.add(mntmNewMenuItem);
+		historial = new JMenuItem("Historial");
+		mnNewMenu.add(historial);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Estadisticas");
 		mnNewMenu.add(mntmNewMenuItem_1);
@@ -77,9 +79,9 @@ public class UIPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Nuevo Pedido");
-		btnNewButton.setBounds(294, 72, 117, 23);
-		contentPane.add(btnNewButton);
+		nuevoPedido = new JButton("Nuevo Pedido");
+		nuevoPedido.setBounds(294, 72, 117, 23);
+		contentPane.add(nuevoPedido);
 		
 		salir = new JButton("salir");
 		salir.setBounds(294, 106, 117, 23);
