@@ -17,6 +17,7 @@ import java.awt.GridLayout;
 import java.awt.Window.Type;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class UIPrincipal extends JFrame {
 
@@ -47,7 +48,7 @@ public class UIPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public UIPrincipal() {
-		setType(Type.UTILITY);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(UIPrincipal.class.getResource("/imagenes/pos.png")));
 		setTitle("POS Adelita");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

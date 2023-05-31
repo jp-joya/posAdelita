@@ -1,6 +1,8 @@
 package modelo.dto;
 
-public class Orden {
+import java.io.Serializable;
+
+public class Orden implements Serializable{
 	Producto producto;
 	private int cantidad;
 	

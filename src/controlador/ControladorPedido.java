@@ -56,6 +56,7 @@ public class ControladorPedido implements ActionListener {
 		if (e.getSource()==vista.facturar) {
 			System.out.println(pedido);
 			modelo.crear(pedido);
+			modelo.guardar();
 			vista.dispose();
 		}
 	}
