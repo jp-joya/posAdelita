@@ -23,19 +23,16 @@ public class ControladorHistorial implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==this.vista.actualizar) {
-			System.out.println("a");
+			vista.table.getColumnModel().getColumn(0).setPreferredWidth(10);
 			int filas = vista.model.getRowCount();
 			for(int i=0;filas>i;i++) {
 				vista.model.removeRow(0);
 			}
-			System.out.println(modelo.getListaPedidos());
 			for (Pedido pedido:modelo.getListaPedidos()) {
-				Object[] fila =new Object[3];
-				fila[0] = pedido.getNumero();
-				fila[1] = pedido.getNumero();
-				fila[2] = pedido.getNumero();
+				Object[] fila =new Object[2];
+				fila[0] = modelo.getListaPedidos().indexOf(pedido)+1;
+				fila[1] = pedido.toString();
 				vista.model.addRow(fila);
-				System.out.println(pedido);
 			}
 		}
 	}

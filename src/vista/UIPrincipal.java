@@ -69,8 +69,8 @@ public class UIPrincipal extends JFrame {
 		JMenu mnNewMenu_1 = new JMenu("Productos");
 		menuBar.add(mnNewMenu_1);
 		
-		crearProducto = new JMenuItem("Crear Producto");
-		mnNewMenu_1.add(crearProducto);
+		//crearProducto = new JMenuItem("Crear Producto");
+		//mnNewMenu_1.add(crearProducto);
 		
 		verCatalogo = new JMenuItem("Ver catalogo");
 		mnNewMenu_1.add(verCatalogo);

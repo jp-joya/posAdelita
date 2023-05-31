@@ -2,10 +2,10 @@ package modelo.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Pedido implements Serializable{
 	
-	private int numero = 1;
 	private ArrayList<Orden> ordenes;
 	
 	public Pedido(){
@@ -19,16 +19,10 @@ public class Pedido implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Pedido #" + numero + ": \n" + ordenes;
+		String list = Arrays.toString(ordenes.toArray()).replace("[", "").replace("]", "").replace(",", "");
+		return list;
 	}
 
-	public int getNumero() {
-		return numero;
-	}
-
-	public ArrayList<Orden> getOrdenes() {
-		return ordenes;
-	}
 	
 	
 }

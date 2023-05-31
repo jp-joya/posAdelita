@@ -19,15 +19,23 @@ import javax.swing.JSpinner;
 import javax.swing.JPasswordField;
 import javax.swing.JEditorPane;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JMenuItem;
+import javax.swing.JTextArea;
+import java.awt.GridLayout;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class UIPedido extends JFrame {
 
 	public JPanel contentPane;
-	public JButton taco;
-	public JButton burrito;
 	public JButton facturar;
-
+	public JTextArea factura;
+	private JButton taco;
+	private JButton coca;
 	/**
 	 * Launch the application.
 	 */
@@ -51,27 +59,33 @@ public class UIPedido extends JFrame {
 		setResizable(false);
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 1023, 642);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		taco = new JButton("taco");
+		facturar = new JButton("Finalizar");
+		facturar.setBounds(908, 569, 89, 23);
+		contentPane.add(facturar);
+		
+		factura = new JTextArea();
+		factura.setBounds(666, 26, 331, 333);
+		contentPane.add(factura);
+		
+		taco = new JButton("");
+		taco.setIcon(new ImageIcon(UIPedido.class.getResource("/imagenes/taco.jpg")));
 		taco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		taco.setBounds(35, 57, 89, 23);
+		taco.setBounds(10, 27, 131, 112);
 		contentPane.add(taco);
 		
-		burrito = new JButton("burrito");
-		burrito.setBounds(35, 123, 89, 23);
-		contentPane.add(burrito);
-		
-		facturar = new JButton("Finalizar");
-		facturar.setBounds(335, 227, 89, 23);
-		contentPane.add(facturar);
+		coca = new JButton("");
+		coca.setIcon(new ImageIcon(UIPedido.class.getResource("/imagenes/coca.png")));
+		coca.setBounds(170, 27, 131, 112);
+		contentPane.add(coca);
 	}
 }

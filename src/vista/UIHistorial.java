@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JButton;
@@ -54,13 +55,18 @@ public class UIHistorial extends JFrame {
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
+		table.setEnabled(false);
 		model = new DefaultTableModel();
 		table.setModel(model);
-		model.addColumn("Pedido #");
-		model.addColumn("Pedido #");
-		model.addColumn("Pedido #");
-
+		model.addColumn("#N");
+		model.addColumn("Detalle");
+        TableColumn column = table.getColumnModel().getColumn(0);
+        column.setMaxWidth(30);
+        column.setMinWidth(30);
+	    table.getColumnModel().getColumn(0).setPreferredWidth(5);
+	    
 		scrollPane.setViewportView(table);
+
 		
 		actualizar = new JButton("actualizar");
 		actualizar.setBounds(325, 227, 99, 23);

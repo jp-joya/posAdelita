@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import modelo.dto.Orden;
 import modelo.dto.Pedido;
@@ -47,8 +48,17 @@ public class PedidoDAO {
 			System.out.println(e.getMessage());
 		}
 	}
+
+	
 	public ArrayList<Pedido> getListaPedidos() {
 		return listaPedidos;
 	}
+
+	@Override
+	public String toString() {
+		String list = Arrays.toString(listaPedidos.toArray()).replace("[", "").replace("]", "").replace(",", "") + "\n";
+		return list;
+	}
+	
 	
 }

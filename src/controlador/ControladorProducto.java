@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import modelo.dao.ProductoDAO;
 import modelo.dto.Producto;
 import vista.UICatalogo;
+import vista.UIPedido;
 import vista.UIProducto;
 
 public class ControladorProducto implements ActionListener{
@@ -38,6 +39,8 @@ public class ControladorProducto implements ActionListener{
 			vista.precio.setText("");
 			vista.codigo.setText("");
 			vista.nombre.setText("");
+
+			
 		}
 		if (e.getSource().equals(this.vista.salir)) {
 			modelo.guardar();
