@@ -18,6 +18,8 @@ import java.awt.Window.Type;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class UIPrincipal extends JFrame {
 
@@ -29,27 +31,10 @@ public class UIPrincipal extends JFrame {
 	public JMenuItem historial;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UIPrincipal frame = new UIPrincipal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the frame.
 	 */
 	public UIPrincipal() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(UIPrincipal.class.getResource("/imagenes/pos.png")));
-		setTitle("POS Adelita");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(UIPrincipal.class.getResource("")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -69,7 +54,7 @@ public class UIPrincipal extends JFrame {
 		JMenu mnNewMenu_1 = new JMenu("Productos");
 		menuBar.add(mnNewMenu_1);
 		
-		//crearProducto = new JMenuItem("Crear Producto");
+		crearProducto = new JMenuItem("Crear Producto");
 		//mnNewMenu_1.add(crearProducto);
 		
 		verCatalogo = new JMenuItem("Ver catalogo");
@@ -81,15 +66,18 @@ public class UIPrincipal extends JFrame {
 		contentPane.setLayout(null);
 		
 		nuevoPedido = new JButton("Nuevo Pedido");
-		nuevoPedido.setBounds(294, 72, 117, 23);
+		nuevoPedido.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		nuevoPedido.setBounds(278, 70, 117, 23);
 		contentPane.add(nuevoPedido);
 		
 		salir = new JButton("salir");
-		salir.setBounds(294, 106, 117, 23);
+		salir.setBounds(278, 124, 117, 23);
 		contentPane.add(salir);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(UIPrincipal.class.getResource("/imagenes/pos.png")));
 		lblNewLabel.setBounds(7, 0, 290, 240);
 		contentPane.add(lblNewLabel);
 	}

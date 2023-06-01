@@ -17,14 +17,14 @@ public class ProductoDAO{
 	private ArrayList<Producto> catalogo;
 	public ObjectInputStream entrada;
     public ObjectOutputStream salida;
-    private String filePath = "catalogo.txt";
+    private String filePath = "catalogo.dat";
 	
 	public ProductoDAO() {
 		this.catalogo = new ArrayList<Producto>();
 		File file = new File(filePath);
 		if (file.isFile()) {
 			try {
-				this.entrada = new ObjectInputStream(new FileInputStream("catalogo.txt"));
+				this.entrada = new ObjectInputStream(new FileInputStream("catalogo.dat"));
 				this.catalogo = (ArrayList<Producto>) entrada.readObject();
 				this.entrada.close();
 			} catch (Exception e) {
@@ -51,7 +51,7 @@ public class ProductoDAO{
 	
 	public void guardar() {
 		try {
-			this.salida = new ObjectOutputStream(new FileOutputStream("catalogo.txt"));
+			this.salida = new ObjectOutputStream(new FileOutputStream("catalogo.dat"));
 			this.salida.writeObject(catalogo);
 			this.salida.close();
 		} catch (Exception e) {

@@ -18,7 +18,7 @@ public class ControladorPrincipal implements ActionListener{
 	
 	public ControladorPrincipal(UIPrincipal vista) {
 		this.vista = vista;
-		//this.vista.crearProducto.addActionListener(this);
+		this.vista.crearProducto.addActionListener(this);
 		this.vista.verCatalogo.addActionListener(this);
 		this.vista.nuevoPedido.addActionListener(this);
 		this.vista.historial.addActionListener(this);
@@ -29,9 +29,9 @@ public class ControladorPrincipal implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		/*if(e.getSource()==this.vista.crearProducto) {
+		if(e.getSource()==this.vista.crearProducto) {
 			ControladorProducto cProducto = new ControladorProducto(new UIProducto());
-		}*/
+		}
 		if(e.getSource()==this.vista.verCatalogo) {
 			ControladorCatalogo cCatalogo = new ControladorCatalogo(new UICatalogo());
 		}

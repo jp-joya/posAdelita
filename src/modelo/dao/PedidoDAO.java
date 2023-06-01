@@ -17,7 +17,7 @@ public class PedidoDAO {
 	private ArrayList<Pedido> listaPedidos;
 	public ObjectInputStream entrada;
     public ObjectOutputStream salida;
-    private String filePath = "historial.txt";
+    private String filePath = "historial.dat";
     private Pedido pedido;
 	
 	
@@ -26,7 +26,7 @@ public class PedidoDAO {
 		File file = new File(filePath);
 		if (file.isFile()) {
 			try {
-				this.entrada = new ObjectInputStream(new FileInputStream("historial.txt"));
+				this.entrada = new ObjectInputStream(new FileInputStream("historial.dat"));
 				this.listaPedidos = (ArrayList<Pedido>) entrada.readObject();
 				this.entrada.close();
 			} catch (Exception e) {
@@ -38,10 +38,11 @@ public class PedidoDAO {
 
 	public boolean crear(Pedido pedido) {
 		return listaPedidos.add(pedido);	
-	}
+	} 
+	
 	public void guardar() {
 		try {
-			this.salida = new ObjectOutputStream(new FileOutputStream("historial.txt"));
+			this.salida = new ObjectOutputStream(new FileOutputStream("historial.dat"));
 			this.salida.writeObject(listaPedidos);
 			this.salida.close();
 		} catch (Exception e) {

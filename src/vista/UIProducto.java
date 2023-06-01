@@ -32,26 +32,12 @@ public class UIProducto extends JFrame {
 	public JTextField precio;
 	public JTextField nombre;
 	public JButton salir;
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UIProducto frame = new UIProducto();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
 	public UIProducto() {
+		setAlwaysOnTop(true);
 		setForeground(UIManager.getColor("Button.disabledForeground"));
 		setResizable(false);
 		setType(Type.UTILITY);
