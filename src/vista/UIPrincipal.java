@@ -34,6 +34,7 @@ public class UIPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public UIPrincipal() {
+		setAlwaysOnTop(true);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(UIPrincipal.class.getResource("")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -11,7 +11,7 @@ public class main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		FlatDarkLaf.setup();
+		FlatLightLaf.setup();
 		ControladorPrincipal controlador = new ControladorPrincipal(new UIPrincipal());
 	}
 
