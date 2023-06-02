@@ -37,6 +37,9 @@ public class PedidoDAO {
 	}
 
 	public boolean crear(Pedido pedido) {
+		for(Orden orden : pedido.getOrdenes()) {
+			orden.getProducto().incrementarCantidadVendida(orden.getCantidad());
+		}
 		return listaPedidos.add(pedido);	
 	} 
 	

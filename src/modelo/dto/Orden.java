@@ -9,6 +9,7 @@ public class Orden implements Serializable{
 	public Orden(Producto producto, int cantidad) {
 		this.producto = producto;
 		this.cantidad = cantidad;
+		producto.incrementarCantidadVendida(cantidad);
 	}
 
 	public Producto getProducto() {

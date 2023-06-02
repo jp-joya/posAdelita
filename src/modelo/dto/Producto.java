@@ -4,8 +4,10 @@ import java.io.Serializable;
 
 public class Producto implements Serializable{
 	private int codigo;
-	private int precio;
 	private String nombre;
+	private int precio;
+    private int cantidadVendida;
+
 	
 	public int getCodigo() {
 		return codigo;
@@ -30,5 +32,11 @@ public class Producto implements Serializable{
 		return nombre + "/" + precio;
 	}
 	
+	public void incrementarCantidadVendida(int cantidad) {
+		cantidadVendida += cantidad;
+	}
+	public int getCantidadVendida() {
+		return cantidadVendida;
+	}
 	
 }

@@ -17,25 +17,21 @@ public class Pedido implements Serializable{
 	}
 	
 	public void agregarOrden(Producto producto, int cantidad) {
-		Orden orden=null;
-		boolean nuevo=true;
-		if(!ordenes.isEmpty()) {
-			for (Orden o: ordenes) {
-				if(o.getProducto().getCodigo()==producto.getCodigo()) {
-					o.setCantidad(o.getCantidad()+1);
-					nuevo = false;
-				}else {
-					orden = new Orden(producto, cantidad);
-				}
-			}
+		boolean existeOrden = false;
 
-		}else{
-		 orden = new Orden(producto, cantidad);
-		}
-		
-		if(nuevo) {
-			ordenes.add(orden);
-		}
+        for (Orden orden : ordenes) {
+            if (orden.getProducto().getCodigo() == producto.getCodigo()) {
+                orden.setCantidad(orden.getCantidad() + cantidad);
+                existeOrden = true;
+                break;
+            }
+        }
+
+        if (!existeOrden) {
+            Orden nuevaOrden = new Orden(producto, cantidad);
+            ordenes.add(nuevaOrden);
+        }
+
 		
 	}
 	

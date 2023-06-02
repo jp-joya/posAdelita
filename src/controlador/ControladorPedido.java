@@ -21,7 +21,6 @@ public class ControladorPedido implements ActionListener {
 	private UIPedido vista;
 	private PedidoDAO modelo;
 	private ProductoDAO catalogo;
-	private Producto producto;
 	private Pedido pedido;
 	JButton[] botones=new JButton[15];
 	
