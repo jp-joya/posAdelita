@@ -77,7 +77,7 @@ public class UIPedido extends JFrame {
 	 */
 	public UIPedido() {
 		setAlwaysOnTop(true);
-		setTitle("CRETAPOS - NUEVO PEDIDO");
+		setTitle("POS Adelita - Nuevo Pedido");
 		setResizable(false);
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

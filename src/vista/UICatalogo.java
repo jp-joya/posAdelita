@@ -27,6 +27,8 @@ public class UICatalogo extends JFrame {
 	 * Create the frame.
 	 */
 	public UICatalogo() {
+		setAlwaysOnTop(true);
+		setTitle("POS Adelita - Catalogo");
 		setResizable(false);
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

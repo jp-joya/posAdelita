@@ -12,6 +12,7 @@ import vista.UICatalogo;
 import vista.UIPedido;
 import vista.UIPrincipal;
 import vista.UIHistorial;
+import vista.UIMetricas;
 
 public class ControladorPrincipal implements ActionListener{
 	private UIPrincipal vista;
@@ -22,6 +23,7 @@ public class ControladorPrincipal implements ActionListener{
 		this.vista.verCatalogo.addActionListener(this);
 		this.vista.nuevoPedido.addActionListener(this);
 		this.vista.historial.addActionListener(this);
+		this.vista.metricas.addActionListener(this);
 		this.vista.salir.addActionListener(this);
 		this.vista.setVisible(true);
 	}
@@ -40,6 +42,9 @@ public class ControladorPrincipal implements ActionListener{
 		}
 		if(e.getSource()==this.vista.historial) {
 			ControladorHistorial cHistorial = new ControladorHistorial(new UIHistorial());
+		}
+		if(e.getSource()==this.vista.metricas) {
+			ControladorMetricas cMetricas = new ControladorMetricas(new UIMetricas());
 		}
 		if(e.getSource()==this.vista.salir) {
 			System.exit(0);

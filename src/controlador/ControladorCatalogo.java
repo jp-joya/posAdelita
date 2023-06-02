@@ -34,7 +34,6 @@ public class ControladorCatalogo implements ActionListener{
 				fila[2] = producto.getPrecio();
 				vista.model.addRow(fila);
 			}
-			
 		}
 	}
 	

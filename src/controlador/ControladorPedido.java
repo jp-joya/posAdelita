@@ -63,7 +63,7 @@ public class ControladorPedido implements ActionListener {
 			modelo.crear(pedido);
 			pedido.setFecha(LocalDateTime.now());
 			modelo.guardar();
-			JOptionPane.showMessageDialog(vista, "Pedido Archivado correctamente.");
+			JOptionPane.showMessageDialog(vista, "Pedido Archivado Correctamente.");
 			vista.dispose();
 		}
 	}

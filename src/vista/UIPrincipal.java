@@ -20,6 +20,7 @@ import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class UIPrincipal extends JFrame {
 
@@ -29,16 +30,18 @@ public class UIPrincipal extends JFrame {
 	public JButton salir;
 	public JButton nuevoPedido;
 	public JMenuItem historial;
+	public JMenuItem metricas;
 
 	/**
 	 * Create the frame.
 	 */
 	public UIPrincipal() {
+		setTitle("POS Adelita");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(UIPrincipal.class.getResource("/imagenes/n.png")));
 		setAlwaysOnTop(true);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(UIPrincipal.class.getResource("")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 460, 300);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -49,14 +52,14 @@ public class UIPrincipal extends JFrame {
 		historial = new JMenuItem("Historial");
 		mnNewMenu.add(historial);
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Estadisticas");
-		mnNewMenu.add(mntmNewMenuItem_1);
+		metricas = new JMenuItem("Metricas");
+		mnNewMenu.add(metricas);
 		
 		JMenu mnNewMenu_1 = new JMenu("Productos");
 		menuBar.add(mnNewMenu_1);
 		
 		crearProducto = new JMenuItem("Crear Producto");
-		//mnNewMenu_1.add(crearProducto);
+		mnNewMenu_1.add(crearProducto);
 		
 		verCatalogo = new JMenuItem("Ver catalogo");
 		mnNewMenu_1.add(verCatalogo);
@@ -71,15 +74,21 @@ public class UIPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		nuevoPedido.setBounds(278, 70, 117, 23);
+		nuevoPedido.setBounds(161, 153, 117, 43);
 		contentPane.add(nuevoPedido);
 		
 		salir = new JButton("salir");
-		salir.setBounds(278, 124, 117, 23);
+		salir.setBounds(351, 216, 69, 23);
 		contentPane.add(salir);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(7, 0, 290, 240);
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(UIPrincipal.class.getResource("/imagenes/logocantina.png")));
+		lblNewLabel_1.setBounds(83, -32, 268, 228);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel = new JLabel("v1.0");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 8));
+		lblNewLabel.setBounds(23, 225, 63, 14);
 		contentPane.add(lblNewLabel);
 	}
 }

@@ -38,17 +38,6 @@ public class ProductoDAO{
 		return catalogo.add(producto);	
 	}
 	
-	public Producto consultar(int codigo) {
-		Producto producto = null;
-		for (Producto p :catalogo) {
-			if (p.getCodigo()==codigo) {
-				producto=p;
-				break;
-			}			
-		}
-		return producto;
-	}
-	
 	public void guardar() {
 		try {
 			this.salida = new ObjectOutputStream(new FileOutputStream("catalogo.dat"));
