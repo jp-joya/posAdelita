@@ -29,11 +29,11 @@ public class Producto implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return nombre + "/" + precio;
+		return nombre + "	/	" + precio;
 	}
 	
 	public void incrementarCantidadVendida(int cantidad) {
-		cantidadVendida += cantidad;
+		this.cantidadVendida += cantidad;
 	}
 	public int getCantidadVendida() {
 		return cantidadVendida;

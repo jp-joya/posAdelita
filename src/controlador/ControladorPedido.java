@@ -60,8 +60,12 @@ public class ControladorPedido implements ActionListener {
 		
 		if (e.getSource()==vista.salir) {
 			modelo.crear(pedido);
+			for (Producto producto:catalogo.getCatalogo()) {
+				System.out.println(producto.getCantidadVendida());
+			}
 			pedido.setFecha(LocalDateTime.now());
 			modelo.guardar();
+			catalogo.guardar();
 			JOptionPane.showMessageDialog(vista, "Pedido Archivado Correctamente.");
 			vista.dispose();
 		}
@@ -111,25 +115,25 @@ public class ControladorPedido implements ActionListener {
 		vista.recibo.setFont(new Font("Tahoma", Font.BOLD, 15));
 
 		vista.recibo.setText("");
-		vista.recibo.append("                   FACTURA ELECTRONICA\n\n");
-		vista.recibo.append("Direccion:	                  Cll. 148 #107-50\n");
-		vista.recibo.append("Cel:		3015090076\n");
-		vista.recibo.append("Fecha: 	              "+pedido.formarFecha(LocalDateTime.now()));
-		vista.recibo.append("\n  ------------------------------------------------\n");
-		vista.recibo.append("Producto	           Unidades        Precio U\n\n");
+		vista.recibo.append("               FACTURA ELECTRONICA\n\n");
+		vista.recibo.append("Direccion:	           Cll. 148 #107-50\n");
+		vista.recibo.append("Cel    	                  3015090076\n");
+		vista.recibo.append("Fecha: 	        "+pedido.formarFecha(LocalDateTime.now()));
+		vista.recibo.append("\n --------------------------------------------\n");
+		vista.recibo.append("Producto	 Unidades        Precio U\n\n");
 		for (Orden orden : pedido.getOrdenes()) {
 			vista.recibo.append(orden.getProducto().getNombre());
-			vista.recibo.append("	                 ");
+			vista.recibo.append("	        ");
 			vista.recibo.append(String.valueOf(orden.getCantidad()));
-			vista.recibo.append("	             ");
+			vista.recibo.append("	");
 			vista.recibo.append(String.valueOf(orden.getProducto().getPrecio()));
 			vista.recibo.append("\n");
 		}
-		vista.recibo.append("\n  -------------------------------------------------\n");
-		vista.recibo.append("       TOTAL		          " + pedido.calcularTotal());
-		vista.recibo.append("\n  -------------------------------------------------\n");			
-		vista.recibo.append("                     Gracias Por Tu Compra!");
-		vista.recibo.append("\n  -------------------------------------------------\n");
+		vista.recibo.append("\n --------------------------------------------\n");
+		vista.recibo.append("   TOTAL		  " + pedido.calcularTotal());
+		vista.recibo.append("\n --------------------------------------------\n");			
+		vista.recibo.append("               Gracias Por Tu Compra!");
+		vista.recibo.append("\n --------------------------------------------\n");
 		vista.recibo.setFont(new Font("Tahoma", Font.BOLD, 15));
 	}
 }

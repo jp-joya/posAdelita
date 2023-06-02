@@ -30,7 +30,7 @@ public class Orden implements Serializable{
 
 	@Override
 	public String toString() {
-		return producto + "/" + cantidad + "\n";
+		return producto + "	/	" + cantidad + "\n";
 	}
 	
 	

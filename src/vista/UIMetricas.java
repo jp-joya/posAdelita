@@ -73,7 +73,7 @@ public class UIMetricas extends JFrame {
 		
 		lblNewLabel = new JLabel("Total Ventas:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel.setBounds(371, 308, 99, 60);
+		lblNewLabel.setBounds(371, 308, 120, 60);
 		contentPane.add(lblNewLabel);
 		
 		txtTotal = new JLabel("0.0");

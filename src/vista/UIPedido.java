@@ -81,7 +81,7 @@ public class UIPedido extends JFrame {
 		setResizable(false);
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 1280, 534);
+		setBounds(100, 100, 1248, 531);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -96,7 +96,7 @@ public class UIPedido extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setEnabled(false);
-		scrollPane.setBounds(582, 11, 331, 302);
+		scrollPane.setBounds(582, 11, 312, 302);
 		contentPane.add(scrollPane);
 		
 		//================================FUNCIONES=========================================
@@ -108,7 +108,7 @@ public class UIPedido extends JFrame {
 		
 		salir = new JButton("Salir");
 		salir.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		salir.setBounds(1131, 420, 123, 43);
+		salir.setBounds(1107, 420, 123, 43);
 		contentPane.add(salir);
 		
 		table = new JTable();
@@ -361,7 +361,7 @@ public class UIPedido extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(923, 11, 331, 398);
+		scrollPane_1.setBounds(899, 11, 331, 398);
 		contentPane.add(scrollPane_1);
 		
 		recibo = new JTextArea();
